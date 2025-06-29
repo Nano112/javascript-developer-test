@@ -1,0 +1,12 @@
+name: Test TypeScript
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm install
+      - run: npm run lint
+      - run: npm run type-check  
+      - run: npm run test-ts

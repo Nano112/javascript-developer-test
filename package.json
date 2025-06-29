@@ -1,14 +1,36 @@
 {
-  "name": "@smokeball-dev/javascript-developer-test",
-  "version": "2.0.1",
-  "description": "",
-  "main": "./index.js",
-  "author": "Smokeball Development Team",
-  "license": "MIT",
-  "scripts": {
-    "test": "jest"
-  },
-  "dependencies": {
-    "jest": "30.0.1"
-  }
+	"name": "@smokeball-dev/javascript-developer-test",
+	"version": "2.0.1",
+	"description": "",
+	"main": "./index.js",
+	"author": "Smokeball Development Team",
+	"license": "MIT",
+	"scripts": {
+		"test": "jest",
+		"test-ts": "jest --testPathPatterns=src-ts",
+		"lint": "eslint src-ts/**/*.ts",
+		"lint:fix": "eslint src-ts/**/*.ts --fix",
+		"format": "prettier --write src-ts/**/*.ts",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"jest": "30.0.1"
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.0",
+		"@typescript-eslint/eslint-plugin": "^8.0.0",
+		"@typescript-eslint/parser": "^8.0.0",
+		"eslint": "^9.0.0",
+		"prettier": "^3.0.0",
+		"ts-jest": "^29.1.0",
+		"typescript": "^5.8.0",
+		"typescript-eslint": "^8.0.0"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node",
+		"testMatch": [
+			"**/src-ts/**/*.test.ts"
+		]
+	}
 }
